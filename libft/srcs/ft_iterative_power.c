@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrealloc.c                                    :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sjimenez <sjimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 12:44:36 by sjimenez          #+#    #+#             */
-/*   Updated: 2018/01/10 19:28:33 by sjimenez         ###   ########.fr       */
+/*   Created: 2018/01/16 19:38:28 by sjimenez          #+#    #+#             */
+/*   Updated: 2018/01/16 19:38:30 by sjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
-char		*ft_strrealloc(char *s, size_t size)
+int		ft_iterative_power(int nb, int power)
 {
-	char	*tmp;
+	int i;
+	int c;
 
-	if (!(tmp = (char*)ft_memalloc(size)))
-		return (NULL);
-	ft_strcpy(tmp, s);
-	ft_memdel((void**)&s);
-	return (tmp);
+	c = nb;
+	i = 1;
+	if (power == 0)
+		return (1);
+	else if (power < 0)
+		return (0);
+	while (i < power)
+	{
+		nb *= c;
+		i++;
+	}
+	return (nb);
 }

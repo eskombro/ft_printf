@@ -6,7 +6,7 @@
 /*   By: sjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 12:47:54 by sjimenez          #+#    #+#             */
-/*   Updated: 2017/11/28 04:41:54 by sjimenez         ###   ########.fr       */
+/*   Updated: 2018/01/16 19:30:07 by sjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int					ft_gnl(int fd, char **line)
 			if (!(bf[fd] = ft_memalloc(BUFF_SIZE + 1)))
 				return (-1);
 		}
-		else if (!(ft_strrealloc(&bf[fd], ft_strlen(bf[fd]) + BUFF_SIZE + 1)))
+		else if (!(ft_str_realloc(&bf[fd], ft_strlen(bf[fd]) + BUFF_SIZE + 1)))
 			return (-1);
 		if ((!ft_memchr(bf[fd], '\n', ft_strlen(bf[fd]))))
 			if ((c = read_line(fd, str, bf[fd])) == -1)

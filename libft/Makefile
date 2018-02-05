@@ -6,7 +6,7 @@
 #    By: sjimenez <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 17:25:17 by sjimenez          #+#    #+#              #
-#    Updated: 2017/11/30 06:09:37 by sjimenez         ###   ########.fr        #
+#    Updated: 2018/01/16 20:55:40 by sjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,15 +79,23 @@ SRC = ft_atoi.c			\
 	  ft_strjoin_free.c \
 	  ft_strrev.c		\
 	  ft_sort_tab_int.c	\
-	  ft_strrealloc.c	\
 	  ft_gnl.c			\
 	  ft_maltabtab.c	\
 	  ft_print_tabstr.c	\
 	  ft_strtrim_free.c	\
 	  ft_freetabstr.c	\
 	  ft_itoa_base.c	\
+	  ft_itoa_long.c	\
+	  ft_itoa_base_ulong.c \
 	  ft_strtolower.c	\
 	  ft_strtoupper.c	\
+	  ft_strsub_free.c	\
+	  ft_lltoa_base.c	\
+	  ft_ulltoa_base.c	\
+	  ft_cut_and_join.c	\
+	  ft_str_realloc.c	\
+	  ft_strrealloc.c	\
+	  ft_iterative_power.c	\
 
 SRC_O = $(addprefix $(SRCS_DIR),  $(SRC:.c=.o))
 

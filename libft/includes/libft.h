@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sjimenez <sjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 18:19:36 by sjimenez          #+#    #+#             */
-/*   Updated: 2017/11/30 05:11:04 by sjimenez         ###   ########.fr       */
+/*   Updated: 2018/01/16 19:53:55 by sjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,23 @@ int					ft_isupper(int c);
 char				*ft_strrev(char *s);
 char				*ft_strjoin_free(char *s1, char *s2, size_t to_free);
 int					*ft_sort_tab_int(int *tab, size_t len, size_t ord);
-int					ft_strrealloc(char **s, size_t size);
 int					ft_gnl(int fd, char **line);
 char				**ft_maltabtab(char **tab, char *str);
 void				ft_print_tabstr(char **tab);
 char				*ft_strtrim_free(char *s);
 void				ft_freetabstr(char **tab);
 char				*ft_itoa_base(int n, int base);
+char				*ft_itoa_long(long n);
+char				*ft_itoa_base_ulong(unsigned long n, unsigned int base);
 char				*ft_strtolower(char *s);
 char				*ft_strtoupper(char *s);
+char				*ft_strsub_free(char *s, unsigned int start, size_t len);
+char				*ft_lltoa_base(long long nbr, int base, int upper);
+char				*ft_ulltoa_base(unsigned long long nbr, int b, int upper);
+char				*ft_cut_and_join(char *s1, char *s2, int start, int to_fr);
+int					ft_str_realloc(char **s, size_t size);
+char				*ft_strrealloc(char *s, size_t size);
+int					ft_iterative_power(int nb, int power);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));

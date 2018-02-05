@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrealloc.c                                    :+:      :+:    :+:   */
+/*   ft_cut_and_join.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjimenez <sjimenez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 12:44:36 by sjimenez          #+#    #+#             */
-/*   Updated: 2018/01/10 19:28:33 by sjimenez         ###   ########.fr       */
+/*   Created: 2018/01/09 18:26:09 by sjimenez          #+#    #+#             */
+/*   Updated: 2018/01/16 20:09:42 by sjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 
-char		*ft_strrealloc(char *s, size_t size)
+char		*ft_cut_and_join(char *s1, char *s2, int start, int to_free)
 {
-	char	*tmp;
+	char	*s;
 
-	if (!(tmp = (char*)ft_memalloc(size)))
+	if (!(s = ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (NULL);
-	ft_strcpy(tmp, s);
-	ft_memdel((void**)&s);
-	return (tmp);
+	ft_strncpy(s, s1, start);
+	ft_strcpy(s + start, s2);
+	ft_strcpy(s + start + ft_strlen(s2), s1 + start);
+	if (to_free == 1 || to_free == 3)
+		free(s1);
+	if (to_free == 2 || to_free == 3)
+		free(s2);
+	return (s);
 }

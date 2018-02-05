@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrealloc.c                                    :+:      :+:    :+:   */
+/*   ft_strsub_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sjimenez <sjimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sjimenez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 12:44:36 by sjimenez          #+#    #+#             */
-/*   Updated: 2018/01/10 19:28:33 by sjimenez         ###   ########.fr       */
+/*   Created: 2018/01/16 19:40:16 by sjimenez          #+#    #+#             */
+/*   Updated: 2018/01/16 19:41:38 by sjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 #include <stdlib.h>
+#include "libft.h"
 
-char		*ft_strrealloc(char *s, size_t size)
+char		*ft_strsub_free(char *s, unsigned int start, size_t len)
 {
 	char	*tmp;
+	size_t	i;
 
-	if (!(tmp = (char*)ft_memalloc(size)))
+	i = 0;
+	if (!s)
 		return (NULL);
-	ft_strcpy(tmp, s);
-	ft_memdel((void**)&s);
+	if (!(tmp = (char*)malloc(len + 1)))
+		return (NULL);
+	while (i < len)
+	{
+		tmp[i] = s[i + start];
+		i++;
+	}
+	tmp[i] = '\0';
+	free(s);
 	return (tmp);
 }
